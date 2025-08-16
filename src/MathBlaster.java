@@ -18,14 +18,35 @@ public class MathBlaster extends JFrame implements ActionListener {
         setLayout(new GridLayout(6, 1));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new Color(240, 248, 255)); // light blue
+
+        Font labelFont = new Font("Arial", Font.BOLD, 16);
 
         levelLabel = new JLabel("Level: 1", SwingConstants.CENTER);
+        levelLabel.setFont(labelFont);
+        levelLabel.setForeground(new Color(0, 102, 204));
+
         scoreLabel = new JLabel("Score: 0", SwingConstants.CENTER);
+        scoreLabel.setFont(labelFont);
+        scoreLabel.setForeground(new Color(34, 139, 34)); // green
+
         timerLabel = new JLabel("Time Left: 60s", SwingConstants.CENTER);
+        timerLabel.setFont(labelFont);
+        timerLabel.setForeground(Color.RED);
+
         questionLabel = new JLabel("", SwingConstants.CENTER);
+        questionLabel.setFont(new Font("Arial", Font.BOLD, 22));
+        questionLabel.setForeground(Color.DARK_GRAY);
 
         answerField = new JTextField();
+        answerField.setFont(new Font("Arial", Font.PLAIN, 16));
+        answerField.setHorizontalAlignment(SwingConstants.CENTER);
+
         submitButton = new JButton("Submit");
+        submitButton.setFont(new Font("Arial", Font.BOLD, 16));
+        submitButton.setFocusPainted(false);
+        submitButton.setBackground(new Color(0, 153, 255));
+        submitButton.setForeground(Color.WHITE);
         submitButton.addActionListener(this);
 
         add(levelLabel);
